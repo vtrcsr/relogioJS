@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.relogio{
+  width: 500px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+
+.relogio .numero{
+  --rotacao: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  transform: rotate(var(--rotacao));
+  padding: 10px;
+}
+
+.numero.numero-1{
+  --rotacao: 30deg;
+}
+.numero.numero-2{
+  --rotacao: 60deg;
+}
+.numero.numero-3{
+  --rotacao: 90deg;
+}
+.numero.numero-4{
+  --rotacao: 120deg;
+}
+.numero.numero-5{
+  --rotacao: 150deg;
+}
+.numero.numero-6{
+  --rotacao: 180deg;
+}
+.numero.numero-7{
+  --rotacao: 210deg;
+}
+.numero.numero-8{
+  --rotacao: 240deg;
+}
+.numero.numero-9{
+  --rotacao: 270deg;
+}
+.numero.numero-10{
+  --rotacao: 300deg;
+}
+.numero.numero-11{
+  --rotacao: 330deg;
+}
+.numero.numero-12{
+  --rotacao: 360deg;
+}
+
+.relogio::after{
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  background-color: black;
+  transform: translate(-50%, -50%);
+
+}
+
+.ponteiro{
+  --rotacao: 0;
+
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: black;
+  transform: translateX(-50%) rotate(calc(var(--rotacao) * 1deg));
+  transform-origin: bottom;
+  z-index: 1;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.ponteiro.segundo{
+  width: 3px;
+  height: 38%;
+  background-color: crimson;
+}
+.ponteiro.minuto{
+  width: 6px;
+  height: 35%;
+  background-color: black;
+}
+.ponteiro.hora{
+  width: 10px;
+  height: 30%;
+  background-color: black;
+}
+
